@@ -1,6 +1,6 @@
 {
   "name": "react-stubby",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A tiny library that supports slot for react component",
   "main": "dist/react-stubby.min.js",
   "repository": "https://github.com/forcs/react-stubby.git",
@@ -13,6 +13,12 @@
     "build": "npm run clean && npm run build:lib && rollup --config build/rollup.config.js",
     "lint": "eslint --ext .js src"
   },
+  "keywords": [
+    "react",
+    "html5",
+    "slot",
+    "stub"
+  ],
   "files": [
     "dist",
     "lib"
