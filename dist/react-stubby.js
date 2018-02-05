@@ -242,4 +242,4 @@ exports.Stub = Stub$1;
 Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
-//# sourceMappingURL=react-stub.js.map
+//# sourceMappingURL=react-stubby.js.map

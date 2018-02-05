@@ -23,7 +23,7 @@ function config (prod) {
   return {
     input: 'src/index.js',
     output: {
-      file: `dist/react-stub${min}.js`,
+      file: `dist/react-stubby${min}.js`,
       format: 'umd',
       name: 'ReactStubby',
       exports: 'named',
