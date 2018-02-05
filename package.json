@@ -1,0 +1,53 @@
+{
+  "name": "react-stub",
+  "version": "0.1.0",
+  "description": "A tiny library that supports slot for react component",
+  "main": "dist/react-stub.min.js",
+  "repository": "https://github.com/forcs/react-stub.git",
+  "author": "Forcs Zhang<357066258@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean:lib": "rimraf lib",
+    "clean": "rimraf lib dist",
+    "build:lib": "npm run clean:lib && babel --no-babelrc src --out-dir lib --presets=env,stage-2,react",
+    "build": "npm run clean && npm run build:lib && rollup --config build/rollup.config.js",
+    "lint": "eslint --ext .js src"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "peerDependencies": {
+    "prop-types": "^15.0.0",
+    "react": "^16.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.17.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.6.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.54.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-uglify": "^3.0.0"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  }
+}
