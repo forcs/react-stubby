@@ -189,7 +189,7 @@ const AddOn = StubConsumer('stub-name')(() => (<div>real content</div>))
 const AddOn = StubConsumer()(() => (<div>real content</div>))
 ```
 
-### <Stub />
+### Stub tag
 
 A component for defining stub.
 
@@ -198,7 +198,7 @@ A component for defining stub.
 - **name**: defining name for stub
 - **children**: placehold
 
-### <Stub.AddOn />
+### Stub.AddOn tag
 
 A component for adding real components on the stub which special name or default.
 
