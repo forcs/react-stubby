@@ -14,7 +14,7 @@ yarn add react-stub
 
 ## Usage
 
-Very easy.
+Like [Slots](https://vuejs.org/v2/guide/components.html#Content-Distribution-with-Slots) on Vuejs, Very easy.
 
 ### Component Style
 
@@ -50,15 +50,31 @@ const App = () => (
     <Post>
       <AddOn stub="title"><h3>post title</h3></AddOn>
       <AddOn>
-        <p>first section content...</p>
-        <p>second section content...</p>
-        <p>lastest section content...</p>
+        <div className="post-content">
+          <p>first section content...</p>
+          <p>second section content...</p>
+          <p>lastest section content...</p>
+        </div>
       </AddOn>
     </Post>
   </div>
 )
 
 ReactDOM.render(<App />, document.getElementById('root'))
+```
+
+```html
+<!-- output: -->
+<div class="main">
+  <div>
+    <h3>post title</h3>
+    <div className="post-content">
+      <p>first section content...</p>
+      <p>second section content...</p>
+      <p>lastest section content...</p>
+    </div>
+  </div>
+</div>
 ```
 
 :dizzy::dizzy::dizzy:
@@ -142,48 +158,55 @@ const App = () => (
     </Post>
   </div>
 )
+```
 
-// output
-// <div class="main">
-//   <div>
-//     <h3>post title</h3>
-//     <div className="post-content-empty">
-//       Content is not found:(
-//     </div>
-//   </div>
-// </div>
+```html
+<!-- output: -->
+<div class="main">
+  <div>
+    <h3>post title</h3>
+    <div className="post-content-empty">
+      Content is not found:(
+    </div>
+  </div>
+</div>
 ```
 
 ## API
 
-### StubProvider
+### StubProvider(WrappedComponent)
 
-A Higher-Order Component for providing the Stub's context
+A Higher-Order Component for providing the Stub's context.
 
-### StubConsumer
+### StubConsumer(name:String)(WrappedComponent)
 
-A Higher-Order Component for adding real components on the stub which special name or default
+A Higher-Order Component for adding real components on the stub which special name or default.
 
 ```javascript
 // named stub
 const AddOn = StubConsumer('stub-name')(() => (<div>real content</div>))
-
 // default stub
 const AddOn = StubConsumer()(() => (<div>real content</div>))
 ```
 
-### Stub
+### <Stub />
 
-A component for defining stub
-
-#### props
-
-- name: defining name for stub
-
-### Stub.AddOn
-
-A component for adding real components on the stub which special name or default
+A component for defining stub.
 
 #### props
 
-- stub: specified the stub for add-on by name
+- **name**: defining name for stub
+- **children**: placehold
+
+### <Stub.AddOn />
+
+A component for adding real components on the stub which special name or default.
+
+#### props
+
+- **stub**: specified the stub for add-on by name
+- **children**: real content
+
+## LICENSE
+
+MIT
