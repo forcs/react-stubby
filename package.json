@@ -1,8 +1,8 @@
 {
   "name": "react-stubby",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A tiny library that supports slot for react component",
-  "main": "dist/react-stub.min.js",
+  "main": "dist/react-stubby.min.js",
   "repository": "https://github.com/forcs/react-stubby.git",
   "author": "Forcs Zhang<357066258@qq.com>",
   "license": "MIT",

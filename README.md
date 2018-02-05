@@ -1,4 +1,4 @@
-# React Stub
+# React Stubby
 
 A tiny library that supports slot for react component.
 
