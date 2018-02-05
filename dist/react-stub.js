@@ -1,7 +1,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('prop-types')) :
 	typeof define === 'function' && define.amd ? define(['exports', 'react', 'prop-types'], factory) :
-	(factory((global.ReactStub = {}),global.React,global.PropTypes));
+	(factory((global.ReactStubby = {}),global.React,global.PropTypes));
 }(this, (function (exports,React,PropTypes) { 'use strict';
 
 React = React && React.hasOwnProperty('default') ? React['default'] : React;
@@ -166,6 +166,7 @@ var _StubProvider = (function (WrappedComponent) {
         if (children) {
           var arr = React.Children.toArray(children);
           var nameChecked = [];
+          this.addOnRenderers = {};
           arr.forEach(function (item) {
             var itemType = item.type;
             if (itemType.displayName === ADD_ON_HOC_DN) {
@@ -173,12 +174,15 @@ var _StubProvider = (function (WrappedComponent) {
             }
             if (item.type.displayName === ADD_ON_DN) {
               var stubName = item.props.stub || DEFAULT_STUB_NAME;
+              // checking, ensure the uniqueness of the consumer
               if (nameChecked.findIndex(function (item) {
                 return item === stubName;
               }) !== -1) {
                 throw new Error('Stub(' + stubName + ') has been occupied');
               }
+
               _this3.addOnRenderers[stubName] = item.props.children;
+              // cache for next checking
               nameChecked.push(stubName);
             }
           });
@@ -207,7 +211,7 @@ var Stub = function (_React$Component) {
   createClass(Stub, [{
     key: 'render',
     value: function render() {
-      return this.addOnRenderer && this.addOnRenderer() || null;
+      return this.addOnRenderer && this.addOnRenderer() || this.props.children || null;
     }
   }]);
   return Stub;

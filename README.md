@@ -6,10 +6,10 @@ A tiny library that supports slot for react component.
 
 ```shell
 # npm
-npm i react-stub -S
+npm i react-stubby -S
 
 #yarn
-yarn add react-stub
+yarn add react-stubby
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ import React from 'react'
 import {
   StubProvider,
   Stub
-} from 'react-stub'
+} from 'react-stubby'
 
 export default StubProvider(() => (
   <div>
@@ -41,7 +41,7 @@ App.js
 import React from 'react'
 import {
   Stub
-} from 'react-stub'
+} from 'react-stubby'
 import Post from './Post'
 
 const { AddOn } = Stub
@@ -88,7 +88,7 @@ import React from 'react'
 import {
   StubProvider,
   Stub
-} from 'react-stub'
+} from 'react-stubby'
 
 export default StubProvider(() => (
   <div>
@@ -105,7 +105,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {
   StubConsumer
-} from 'react-stub'
+} from 'react-stubby'
 import Post from './Post'
 
 const Title = StubConsumer('title')(() => (

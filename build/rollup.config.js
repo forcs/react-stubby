@@ -25,7 +25,7 @@ function config (prod) {
     output: {
       file: `dist/react-stub${min}.js`,
       format: 'umd',
-      name: 'ReactStub',
+      name: 'ReactStubby',
       exports: 'named',
       sourcemap: true,
       globals: {
