@@ -14,7 +14,7 @@ yarn add react-stubby
 
 ## Usage
 
-Like [Slots](https://vuejs.org/v2/guide/components.html#Content-Distribution-with-Slots) on Vuejs, very simple.
+Like [Slots](https://vuejs.org/v2/guide/components.html#Content-Distribution-with-Slots) on Vuejs, very simple. Talk is cheap, show you code.
 
 ### Component Style
 
