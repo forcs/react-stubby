@@ -62,7 +62,10 @@ const App = () => (
   </div>
 )
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+)
 ```
 
 :ok_hand: :dizzy::dizzy::dizzy:
@@ -94,12 +97,14 @@ import {
   Stub
 } from 'react-stubby'
 
-export default StubProvider(() => (
-  <div>
-    <Stub name="title" />
-    <Stub />
-  </div>
-))
+export default StubProvider(
+  () => (
+    <div>
+      <Stub name="title" />
+      <Stub />
+    </div>
+  )
+)
 ```
 
 App.js
@@ -113,18 +118,22 @@ import {
 import Post from './Post'
 
 // !!!
-const Title = StubConsumer('title')(() => (
-  <h3>post title</h3>
-))
+const Title = StubConsumer('title')(
+  () => (
+    <h3>post title</h3>
+  )
+)
 
 // !!!
-const Content = StubConsumer()(() => (
-  <div className="post-content">
-    <p>first section content...</p>
-    <p>second section content...</p>
-    <p>lastest section content...</p>
-  </div>
-))
+const Content = StubConsumer()(
+  () => (
+    <div className="post-content">
+      <p>first section content...</p>
+      <p>second section content...</p>
+      <p>lastest section content...</p>
+    </div>
+  )
+)
 
 const App = () => (
   <div className="main">
@@ -135,7 +144,10 @@ const App = () => (
   </div>
 )
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+)
 ```
 
 That is it.
@@ -199,7 +211,10 @@ const App = () => (
   </div>
 )
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+)
 ```
 
 ### Place Holder
@@ -207,14 +222,20 @@ ReactDOM.render(<App />, document.getElementById('root'))
 Post.js
 
 ```javascript
-export default StubProvider(() => (
-  <div>
-    <Stub name="title" />
-    <Stub>
-      <div className="post-content-empty">Content is not found:(</div>
-    </Stub>
-  </div>
-))
+export default StubProvider(
+  () => (
+    <div>
+      <Stub name="title" />
+      <Stub>
+        <div
+          className="post-content-empty"
+        >
+          Content is not found:(
+        </div>
+      </Stub>
+    </div>
+  )
+)
 ```
 
 App.js
