@@ -14,11 +14,11 @@ yarn add react-stubby
 
 ## Usage
 
-Like [Slots](https://vuejs.org/v2/guide/components.html#Content-Distribution-with-Slots) on Vuejs, Very easy.
+Like [Slots](https://vuejs.org/v2/guide/components.html#Content-Distribution-with-Slots) on Vuejs, very simple.
 
 ### Component Style
 
-Post.js
+:point_up: Post.js
 
 ```javascript
 import React from 'react'
@@ -35,7 +35,7 @@ export default StubProvider(() => (
 ))
 ```
 
-App.js
+:v: App.js
 
 ```javascript
 import React from 'react'
@@ -63,6 +63,8 @@ const App = () => (
 ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
+:ok_hand: :dizzy::dizzy::dizzy:
+
 ```html
 <!-- output: -->
 <div class="main">
@@ -77,26 +79,9 @@ ReactDOM.render(<App />, document.getElementById('root'))
 </div>
 ```
 
-:dizzy::dizzy::dizzy:
-
 ### HoC Style
 
-Post.js
-
-```javascript
-import React from 'react'
-import {
-  StubProvider,
-  Stub
-} from 'react-stubby'
-
-export default StubProvider(() => (
-  <div>
-    <Stub name="title" />
-    <Stub />
-  </div>
-))
-```
+How to code if based on HoC?
 
 App.js
 
@@ -108,10 +93,12 @@ import {
 } from 'react-stubby'
 import Post from './Post'
 
+// !!!
 const Title = StubConsumer('title')(() => (
   <h3>post title</h3>
 ))
 
+// !!!
 const Content = StubConsumer()(() => (
   <div className="post-content">
     <p>first section content...</p>
@@ -131,6 +118,8 @@ const App = () => (
 
 ReactDOM.render(<App />, document.getElementById('root'))
 ```
+
+That is it.
 
 ### Place Holder
 
