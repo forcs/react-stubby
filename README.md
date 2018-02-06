@@ -254,9 +254,17 @@ A Higher-Order Component for adding real components on the stub which special na
 
 ```javascript
 // named stub
-const AddOn = StubConsumer('stub-name')(() => (<div>real content</div>))
+const AddOn = StubConsumer('stub-name')(
+  () => (
+    <div>real content</div>
+  )
+)
 // default stub
-const AddOn = StubConsumer()(() => (<div>real content</div>))
+const AddOn = StubConsumer()(
+  () => (
+    <div>real content</div>
+  )
+)
 ```
 
 ### `<StubContextProvider />`
