@@ -196,6 +196,40 @@ var _StubProvider = (function (WrappedComponent) {
   }, _temp2;
 });
 
+var StubContextProvider = function (_React$Component) {
+  inherits(StubContextProvider, _React$Component);
+
+  function StubContextProvider() {
+    classCallCheck(this, StubContextProvider);
+    return possibleConstructorReturn(this, (StubContextProvider.__proto__ || Object.getPrototypeOf(StubContextProvider)).apply(this, arguments));
+  }
+
+  createClass(StubContextProvider, [{
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.Wrapped = null;
+    }
+  }, {
+    key: 'componentWillUpdate',
+    value: function componentWillUpdate() {
+      this.Wrapped = null;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      if (!this.Wrapped) {
+        this.Wrapped = _StubProvider(function () {
+          return React.Children.only(_this2.props.children);
+        });
+      }
+      return React.createElement(this.Wrapped, null);
+    }
+  }]);
+  return StubContextProvider;
+}(React.Component);
+
 var Stub = function (_React$Component) {
   inherits(Stub, _React$Component);
 
@@ -231,12 +265,15 @@ var StubConsumer = _StubConsumer;
 
 var StubProvider = _StubProvider;
 
+var StubContextProvider$1 = StubContextProvider;
+
 Stub.AddOn = AddOn;
 
 var Stub$1 = Stub;
 
 exports.StubConsumer = StubConsumer;
 exports.StubProvider = StubProvider;
+exports.StubContextProvider = StubContextProvider$1;
 exports.Stub = Stub$1;
 
 Object.defineProperty(exports, '__esModule', { value: true });
