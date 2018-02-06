@@ -1,6 +1,6 @@
 # React Stubby
 
-A tiny library that supports slot for react component.
+A tiny library that supports content distribution for react component.
 
 ## Installation
 
@@ -189,7 +189,7 @@ const AddOn = StubConsumer('stub-name')(() => (<div>real content</div>))
 const AddOn = StubConsumer()(() => (<div>real content</div>))
 ```
 
-### Stub tag
+### `<Stub />`
 
 A component for defining stub.
 
@@ -198,7 +198,7 @@ A component for defining stub.
 - **name**: defining name for stub
 - **children**: placehold
 
-### Stub.AddOn tag
+### `<Stub.AddOn />`
 
 A component for adding real components on the stub which special name or default.
 
